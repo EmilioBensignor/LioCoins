@@ -1,10 +1,9 @@
 <template>
     <DefaultHeader />
     <DefaultMain>
-        <!-- <Toast /> -->
+        <Toast />
         <DefaultSection>
             <slot />
         </DefaultSection>
     </DefaultMain>
-    <DefaultFooter />
 </template>

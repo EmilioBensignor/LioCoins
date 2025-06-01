@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
   modules: [
     '@nuxt/image',
     '@nuxt/icon',
@@ -52,6 +53,20 @@ export default defineNuxtConfig({
     class: 'tablerIcon',
     serverBundle: {
       collections: ['tabler'],
+    }
+  },
+  vite: {
+    optimizeDeps: {
+      include: ['primeflex', 'pinia']
+    },
+    build: {
+      cssCodeSplit: true,
+      chunkSizeWarningLimit: 1000,
+    },
+    server: {
+      fs: {
+        strict: false
+      }
     }
   },
   experimental: {
