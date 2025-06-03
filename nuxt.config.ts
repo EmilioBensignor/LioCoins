@@ -3,15 +3,46 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
   css: ['~/assets/css/main.css'],
-  modules: [
-    '@nuxt/image',
-    '@nuxt/icon',
-    '@nuxt/fonts',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/supabase',
-    '@pinia/nuxt',
-    '@primevue/nuxt-module',
-  ],
+  modules: ['@nuxt/image', '@nuxt/icon', '@nuxt/fonts', '@nuxtjs/tailwindcss', '@nuxtjs/supabase', '@pinia/nuxt', '@primevue/nuxt-module', '@nuxtjs/i18n'],
+  i18n: {
+    // Estrategia: sin prefijo para el default, con prefijo para el resto
+    strategy: 'prefix_except_default',
+
+    // Default es España (sin prefijo en URL)
+    defaultLocale: 'es',
+
+    // Configuración de segmentos
+    locales: [
+      {
+        code: 'es',
+        iso: 'es-ES',
+        name: 'España'
+      },
+      {
+        code: 'ar',
+        iso: 'es-AR',
+        name: 'Argentina'
+      },
+      {
+        code: 'mx',
+        iso: 'es-MX',
+        name: 'México'
+      },
+      {
+        code: 'us',
+        iso: 'en-US',
+        name: 'United States'
+      }
+    ],
+
+    // Deshabilitar detección automática para control total
+    detectBrowserLanguage: false,
+
+    // Configuración para eliminar warning
+    bundle: {
+      optimizeTranslationDirective: false
+    }
+  },
   supabase: {
     redirectOptions: {
       login: '/login',
@@ -57,7 +88,7 @@ export default defineNuxtConfig({
   },
   vite: {
     optimizeDeps: {
-      include: ['primeflex', 'pinia']
+      include: ['pinia']
     },
     build: {
       cssCodeSplit: true,
