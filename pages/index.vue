@@ -1,19 +1,14 @@
 <template>
     <div>
-        <button @click="signOut()">Log Out</button>
+        <h2>Página Principal - Segmento: {{ locale.toUpperCase() }}</h2>
 
-        <h2 class="text-red-500">Página Principal - Segmento: {{ locale.toUpperCase() }}</h2>
-
-        <!-- Ejemplo de datos específicos por segmento -->
         <div class="mt-4">
             <h3>Tours Destacados</h3>
 
-            <!-- Ejemplo de precios formateados -->
             <div class="grid gap-4 mt-2">
                 <div class="border p-4 rounded">
                     <h4>Tour Ciudad</h4>
                     <p>Precio: {{ formatPrice(299) }}</p>
-                    <p>Teléfono: {{ currentSegment.phone }}</p>
                 </div>
 
                 <div class="border p-4 rounded">
@@ -24,7 +19,6 @@
             </div>
         </div>
 
-        <!-- Ejemplo de carga de datos desde Supabase por segmento -->
         <div class="mt-6">
             <h3>Tours desde Base de Datos</h3>
             <button @click="loadTours" class="bg-blue-500 text-white px-4 py-2 rounded">
@@ -39,7 +33,6 @@
             </div>
         </div>
 
-        <!-- Links a otras páginas manteniendo el segmento -->
         <div class="mt-6">
             <nav class="space-x-4">
                 <NuxtLink :to="localePath('/tours')" class="text-blue-600">
@@ -48,6 +41,7 @@
                 <NuxtLink :to="localePath('/about')" class="text-blue-600">
                     Acerca de
                 </NuxtLink>
+                <button @click="signOut()" class="bg-red-500 text-white px-3 rounded-md">Log Out</button>
             </nav>
         </div>
     </div>
