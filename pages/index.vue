@@ -2,7 +2,7 @@
     <div>
         <button @click="signOut()">Log Out</button>
 
-        <h2>Página Principal - Segmento: {{ locale.toUpperCase() }}</h2>
+        <h2 class="text-red-500">Página Principal - Segmento: {{ locale.toUpperCase() }}</h2>
 
         <!-- Ejemplo de datos específicos por segmento -->
         <div class="mt-4">
