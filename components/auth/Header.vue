@@ -1,5 +1,5 @@
 <template>
     <header class="flex justify-center">
-        Auth
+        Header Auth
     </header>
 </template>
