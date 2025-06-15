@@ -1,3 +1,3 @@
 <template>
-    <header>Default</header>
+    <header>Default Header</header>
 </template>
